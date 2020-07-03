@@ -11,15 +11,17 @@ def Home():
 
 @app.route('/predict_home_price', methods=['POST'])
 def predict_home_price():
-    total_sqft = float(request.form['total_sqft'])
-    location = request.form['location']
-    bhk = int(request.form['bhk'])
-    bath = int(request.form['bath'])
+    if request.method == 'POST':
+        total_sqft = float(request.form['total_sqft'])
+        location = request.form['location']
+        bhk = int(request.form['bhk'])
+        bath = int(request.form['bath'])
 
-    output =  util.get_estimated_price(location,total_sqft,bhk,bath)
+        output =  util.get_estimated_price(location,total_sqft,bhk,bath)
 
-    return render_template('index.html', prediction_text="You Can Sell The House at {}".format(output))
-
+        return render_template('index.html', prediction_text="You Can Sell The House at {}".format(output))
+    else:
+        return render_template('index.html', prediction_text="You Can Sell The House")
 
 if __name__ == "__main__":
     print("Starting Python Flask Server For Home Price Prediction...")

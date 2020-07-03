@@ -68,7 +68,6 @@
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select name="location" required="required">
                                     <option disabled="disabled" selected="selected">Location</option>
-                                    <h1>locationss[0]</h1>
                                     {% if locationss %}
                                         {% for n in locationss %}
                                              <option value="{{n}}">{{n}}</option>
@@ -82,7 +81,10 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <br><br><h3>{{ prediction_text }}<h3>
+					{% if prediction_text %}
+						<br><br><h3>{{ prediction_text }}<h3>
+					{% endif %}
+                                    
                                 </div>
                             </div>
                         </div>
