@@ -346,6 +346,7 @@ input {
 
 .rs-select2 .select2-container {
   width: 100% !important;
+  padding: 2rem;
   outline: none;
 }
 

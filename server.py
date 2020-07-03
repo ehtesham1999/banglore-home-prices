@@ -19,7 +19,7 @@ def predict_home_price():
 
         output =  util.get_estimated_price(location,total_sqft,bhk,bath)
 
-        return render_template('index.html', prediction_text="You Can Sell The House at {}".format(output))
+        return render_template('index.html', prediction_text="You Can Sell The House at {} Lakhs".format(output))
     else:
         return render_template('index.html', prediction_text="You Can Sell The House")
 
